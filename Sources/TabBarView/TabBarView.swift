@@ -65,11 +65,8 @@ public struct TabBarView: View {
             x: geometry.size.width / 2,
             y: (geometry.size.height - tabBarBounds.size.height) / 2)
     }
-    
-    let names = ["star.fill", "clock.fill", "person.crop.circle", "circle.grid.3x3.fill", "recrodingtape"]
-    let labels = ["Favorites", "Recents", "Contacts", "Keypad", "Voicemail"]
 
-    var body: some View {
+    public var body: some View {
         GeometryReader { geometry in
             VStack(alignment: .center, spacing: 0) {
                 HStack (alignment: .center) {
@@ -115,7 +112,6 @@ public struct TabBarView: View {
 
 struct TabBarView_Previews: PreviewProvider {
     static var previews: some View {
-//        Text("sj")
         TabBarView(tabs: [
             Tab(iconName: "star.fill",
                 label: "Favorites",
