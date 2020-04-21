@@ -11,9 +11,16 @@ import UIKit
 
 public struct Tab<Content: View> {
     var iconName: String
-    var label: String?
+    var label: String? = nil
     var tag: Int
     var content: Content
+    
+    public init(iconName: String, label: String?, tag: Int, content: Content) {
+        self.iconName = iconName
+        self.label = label
+        self.tag = tag
+        self.content = content
+    }
 }
 
 struct TabBarItemData {
@@ -44,6 +51,9 @@ public struct TabBarView: View {
     @State var selection: Int = 0
     var tabs: [Tab<AnyView>] = []
     
+    public init(tabs: [Tab<AnyView>] = []) {
+        self.tabs = tabs
+    }
     private func createTabBarContentOverlay(
         _ geometry: GeometryProxy,
         _ preferences: TabBarPreferenceData) -> some View {
