@@ -9,7 +9,7 @@
 import SwiftUI
 import UIKit
 
-struct Tab<Content: View> {
+public struct Tab<Content: View> {
     var iconName: String
     var label: String?
     var tag: Int
@@ -40,7 +40,7 @@ struct TabBarPreferenceKey: PreferenceKey {
     }
 }
 
-struct TabBarView: View {
+public struct TabBarView: View {
     @State var selection: Int = 0
     var tabs: [Tab<AnyView>] = []
     
